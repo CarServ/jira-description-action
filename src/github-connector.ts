@@ -79,4 +79,11 @@ export class GithubConnector {
       pullRequest: pullRequest as PullRequestParams,
     };
   }
+
+  async getUserFromEmail(email: string) {
+    const users = await this.client.search.users({
+      q: `${email} in:email`,
+    });
+    return users;
+  }
 }
