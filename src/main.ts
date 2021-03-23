@@ -28,12 +28,6 @@ async function run(): Promise<void> {
     console.log(`JIRA key -> ${issueKey}`);
 
     const details = await jiraConnector.getTicketDetails(issueKey);
-
-    console.log(`Detailss -> ${details.customfield_10063.emailAddress}`);
-
-    const users = await githubConnector.getUserFromEmail(details.customfield_10063.emailAddress);
-    
-    console.log('Users', JSON.stringify(users, null, 2));
     
     await githubConnector.updatePrDetails(details);
   } catch (error) {
