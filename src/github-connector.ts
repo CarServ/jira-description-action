@@ -25,8 +25,6 @@ export class GithubConnector {
 
   getIssueKeyFromTitle(): string | null {
     const { WHAT_TO_USE } = getInputs();
-
-    console.log('ghdata', this.githubData);
     const prTitle = this.githubData.pullRequest.title || '';
     const branchName = this.headBranch;
 
@@ -74,12 +72,6 @@ export class GithubConnector {
       },
     } = this.context;
 
-    console.log('test', {
-      eventName,
-      repository,
-      owner,
-      pullRequest: pullRequest as PullRequestParams,
-    });
     return {
       eventName,
       repository,
@@ -101,7 +93,7 @@ export class GithubConnector {
     const { number: prNumber = 0 } = this.githubData.pullRequest;
     const reviewers: Array<any> = [];
 
-    console.log(getReviewer(details));
+    console.log('reviewer', getReviewer(details));
 
     const prData = {
       owner,
