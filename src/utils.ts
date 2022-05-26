@@ -86,10 +86,7 @@ export const getReviewer = (details: JIRADetails): string => {
   const mapping: {
     [key: string]: string;
   } = {
-    'dustin@carserv.com': 'dustinblanchard',
-    'hakan@carserv.com': 'htelsiz',
-    'lawrence@carserv.com': 'lboogie04',
-    'dinesh@carserv.com': 'dinesh-carserv',
+    'youssef@carserv.com': 'ychaker',
   };
 
   return mapping[email] || '';
